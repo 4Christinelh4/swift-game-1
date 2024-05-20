@@ -53,7 +53,6 @@ struct GameView: View {
             columnCount += 1
         } while columnCount < count
         
-        
         return 80
     }
 }

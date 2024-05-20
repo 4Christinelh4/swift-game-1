@@ -31,7 +31,6 @@
 		5655A79F2BF6165800119F5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5655A7A42BF6165800119F5B /* Memorize Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memorize Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5655A7AA2BF6165800119F5B /* Memorize Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memorize Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5655A7AC2BF6165800119F5B /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		5655A7BF2BF61CE700119F5B /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		5655A7C22BF61D2100119F5B /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				5655A7992BF6165600119F5B /* Shared */,
-				5655A7AB2BF6165800119F5B /* macOS */,
 				5655A7A52BF6165800119F5B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,14 +82,6 @@
 				5655A7AA2BF6165800119F5B /* Memorize Game.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		5655A7AB2BF6165800119F5B /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				5655A7AC2BF6165800119F5B /* macOS.entitlements */,
-			);
-			path = macOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

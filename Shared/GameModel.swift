@@ -19,10 +19,10 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     
     var revealedCard: Int? {
         get {
-            return cards.indices.filter({i in  cards[i].isFaceUp }).only
+            return cards.indices.filter{i in cards[i].isFaceUp }.only
         }
         set {
-            return cards.indices.forEach { cards[$0].isFaceUp = (newValue == $0 ) }
+            return cards.indices.forEach { cards[$0].isFaceUp = (newValue == $0) }
         }
     }
     
@@ -33,11 +33,12 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                 if let potentialMatchedIdx = revealedCard {
                     if cards[chosenCardIdx].content == cards[potentialMatchedIdx].content {
                         cards[chosenCardIdx].matched = true
+                        cards[potentialMatchedIdx].matched = true
                     }
-                    revealedCard = nil
                 } else {
                     revealedCard = chosenCardIdx
                 }
+                
                 cards[chosenCardIdx].isFaceUp = true
             }
         }
