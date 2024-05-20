@@ -2,8 +2,6 @@
 //  Persistence.swift
 //  Shared
 //
-//  Created by yuweiL on 16/5/24.
-//
 
 import CoreData
 

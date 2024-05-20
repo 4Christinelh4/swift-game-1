@@ -2,8 +2,6 @@
 //  GameModel.swift
 //  Memorize Game
 //
-//  Created by yuweiL on 16/5/24.
-//
 
 import Foundation
 

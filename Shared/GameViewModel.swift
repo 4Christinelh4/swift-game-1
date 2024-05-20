@@ -2,8 +2,6 @@
 //  GameViewModel.swift
 //  Memorize Game
 //
-//  Created by yuweiL on 16/5/24.
-//
 
 import SwiftUI
 
@@ -21,8 +19,6 @@ class EmojiMemoryGameViewModel: ObservableObject {
             return "👽"
         })
     }
-    
-//    var objectWillChange: ObservableObjectPublisher
     
     @Published private var model = createGameView()
     
