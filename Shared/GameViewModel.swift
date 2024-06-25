@@ -23,13 +23,16 @@ class EmojiMemoryGameViewModel: ObservableObject {
     @Published private var model = createGameView()
     
     var cards: Array<MemoryGame<String>.Card> {
-        return model.cards
+        model.cards
     }
     
     func choose(_ card: MemoryGame<String>.Card) {
         model.choose(card)
     }
     
+    var color: Color {
+        .orange
+    }
     // MARK: - Intents
     
     func shuffle() {

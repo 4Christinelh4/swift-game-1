@@ -59,7 +59,6 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         let content: CardContent
         
         var id: String
-        
     }
 }
 
