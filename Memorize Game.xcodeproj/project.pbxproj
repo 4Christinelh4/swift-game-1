@@ -23,6 +23,7 @@
 		567A2FB32C2A8EF2004D5F1D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567A2FB12C2A8EF2004D5F1D /* CardView.swift */; };
 		567A2FB52C2A9334004D5F1D /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567A2FB42C2A9334004D5F1D /* AspectVGrid.swift */; };
 		567A2FB62C2A9334004D5F1D /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567A2FB42C2A9334004D5F1D /* AspectVGrid.swift */; };
+		567A2FB82C2AD766004D5F1D /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567A2FB72C2AD766004D5F1D /* Pie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		5655A7C22BF61D2100119F5B /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		567A2FB12C2A8EF2004D5F1D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		567A2FB42C2A9334004D5F1D /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
+		567A2FB72C2AD766004D5F1D /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		5655A7992BF6165600119F5B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				567A2FB72C2AD766004D5F1D /* Pie.swift */,
 				567A2FB42C2A9334004D5F1D /* AspectVGrid.swift */,
 				5655A79C2BF6165600119F5B /* Memorize_GameApp.swift */,
 				5655A79D2BF6165600119F5B /* GameView.swift */,
@@ -188,6 +191,7 @@
 			files = (
 				567A2FB22C2A8EF2004D5F1D /* CardView.swift in Sources */,
 				5655A7AD2BF6165800119F5B /* Memorize_Game.xcdatamodeld in Sources */,
+				567A2FB82C2AD766004D5F1D /* Pie.swift in Sources */,
 				567A2FB52C2A9334004D5F1D /* AspectVGrid.swift in Sources */,
 				5655A7AF2BF6165800119F5B /* Memorize_GameApp.swift in Sources */,
 				5655A7C02BF61CE700119F5B /* GameViewModel.swift in Sources */,

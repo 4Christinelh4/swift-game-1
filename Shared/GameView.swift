@@ -7,12 +7,13 @@ import SwiftUI
 
 struct GameView: View {
     @ObservedObject var emojiGameViewModel: EmojiMemoryGameViewModel
+    var aspectRatio: CGFloat = 2/3
     
-    var aspectRatio: CGFloat = 3/4
     var body: some View {
         VStack {
-            cards.animation(.default, value: emojiGameViewModel.cards
-            )
+            cards
+                .foregroundColor(emojiGameViewModel.color)
+                .animation(.default, value: emojiGameViewModel.cards)
             
             Button("Shuffle") {
                 emojiGameViewModel.shuffle()
@@ -21,25 +22,18 @@ struct GameView: View {
     }
     
     private var cards: some View {
-        AspectVGrid(aspectRatio_: aspectRatio, allitems: emojiGameViewModel.cards) {
+        AspectVGrid(aspectRatio_: aspectRatio, emojiGameViewModel.cards) {
             card_ in
             
             CardView(card_)
                 .aspectRatio(aspectRatio, contentMode: .fit)
-                .padding(6)
+                .padding(4)
                 .onTapGesture {
                     emojiGameViewModel.choose(card_)
                 }
-        }
+        }.foregroundColor(Color.orange)
     }
 }
-
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {

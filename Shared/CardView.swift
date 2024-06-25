@@ -20,11 +20,14 @@ struct CardView: View{
             Group {
                 base.fill(.white)
                 base.strokeBorder(lineWidth: Constants.lineWidth)
-                Text(card.content)
-                    .font(.largeTitle)
-                    .minimumScaleFactor(0.01)
-                    .aspectRatio(1, contentMode: .fit)
-                    .multilineTextAlignment(.center)
+                Pie(endAngle: .degrees(240))
+                    .opacity(Constants.Pie.opacity)
+                    .overlay(
+                        Text(card.content)
+                            .font(.system(size: Constants.FontSize.largest))
+                        .minimumScaleFactor(Constants.FontSize.scaleFactor)
+                        .multilineTextAlignment(.center)
+                    )
                     .padding(Constants.inset)
             }
             .opacity(card.isFaceUp ? 1 : 0)
@@ -37,16 +40,21 @@ struct CardView: View{
     private struct Constants {
         static let cornerRadius: CGFloat = 12
         static let lineWidth: CGFloat = 3
-        static let inset: CGFloat = 5
+        static let inset: CGFloat = 4
         
         struct FontSize {
-            static let largest: CGFloat = 200
-            static let smallest: CGFloat = 10
+            static let largest: CGFloat = 50
+            static let smallest: CGFloat = 5
             static let scaleFactor = smallest / largest
+        }
+        
+        struct Pie {
+            static let opacity = 0.8
+            static let inset: CGFloat = 5
         }
     }
 }
 
 #Preview {
-    CardView(MemoryGame<String>.Card(isFaceUp: true, content: "🩵", id: "A"))
+    CardView(MemoryGame<String>.Card(isFaceUp: true, content: "💙", id: "B"))
 }

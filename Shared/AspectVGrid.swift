@@ -8,12 +8,20 @@
 import SwiftUI
 
 struct AspectVGrid<Item: Identifiable, ItemView: View>: View {
-    var aspectRatio_: CGFloat = 1
+    var aspectRatio_: CGFloat
     var allitems: [Item]
-    var content: (Item) -> ItemView
+    @ViewBuilder var content: (Item) -> ItemView
     
-    func gridItemWidthThatFits(count: Int, size: CGSize
-                               , atAspectRatio aspectRatio: CGFloat) -> CGFloat {
+    init(aspectRatio_: CGFloat, _ allitems: [Item], content: @escaping (Item) -> ItemView) {
+        self.aspectRatio_ = aspectRatio_
+        self.allitems = allitems
+        self.content = content
+    }
+    
+    func gridItemWidthThatFits(count: Int, 
+                               size: CGSize,
+                               atAspectRatio aspectRatio: CGFloat
+                                ) -> CGFloat {
         let count = CGFloat(count)
         var columnCount = 1.0
         repeat {
@@ -23,12 +31,12 @@ struct AspectVGrid<Item: Identifiable, ItemView: View>: View {
             let rowCount = (count / columnCount).rounded(.up)
             
             if rowCount * height < size.height {
-                return width.rounded(.down)
+                return (size.width / columnCount).rounded(.down)
             }
             columnCount += 1
         } while columnCount < count
         
-        return 80
+        return min(size.width / count, size.height * aspectRatio).rounded(.down)
     }
     
     var body: some View {
@@ -39,6 +47,8 @@ struct AspectVGrid<Item: Identifiable, ItemView: View>: View {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: gridItemSize), spacing: 0)], spacing: 0) {
                 ForEach(allitems) {
                     itemSingle_ in
+                    content(itemSingle_)
+                        .aspectRatio(aspectRatio_, contentMode: .fit)
                 }
             }
         }
